@@ -12,7 +12,7 @@ class CoreDataWrapper {
     static let shared = CoreDataWrapper()
 
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "YourDataModelName")
+        let container = NSPersistentContainer(name: "App")
         container.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

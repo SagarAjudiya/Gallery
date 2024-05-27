@@ -22,6 +22,7 @@ class HomeVC: UIViewController {
             cvImage.reloadData()
         }
     }
+    let coreData = CoreDataWrapper.shared
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -54,9 +55,12 @@ extension HomeVC {
     }
     
     private func getImages() {
-        if let galleryList = SessionManager.shared.galleryObject {
-            self.loader?.stopAnimating()
-            self.imageList = galleryList
+        if let savedGalleryResponses = retrieveGalleryResponsesFromCoreData(), !savedGalleryResponses.isEmpty {
+            for response in savedGalleryResponses {
+                imageList = response.hits ?? []
+                print(123, imageList.count)
+            }
+            loader.stopAnimating()
         } else {
             viewModel.getGalleryListApi(request: reqModel, showLoader: { [weak self] isLoading in
                 guard let self else { return }
@@ -64,9 +68,34 @@ extension HomeVC {
             }, apiClosure: { [weak self] status, message, data in
                 guard let self else { return }
                 imageList = data?.hits ?? []
-                SessionManager.shared.galleryObject = imageList
+//                SessionManager.shared.galleryObject = imageList
+                saveGalleryResponseToCoreData(data ?? GalleryResponse())
             })
         }
+    }
+    
+    func saveGalleryResponseToCoreData(_ galleryResponse: GalleryResponse) {
+        // Convert GalleryResponse to Data
+        let encoder = JSONEncoder()
+        guard let jsonData = try? encoder.encode(galleryResponse) else {
+            print("Failed to encode GalleryResponse")
+            return
+        }
+
+        // Save data to Core Data
+        coreData.createTableForResponseModel(GalleryResponse.self, jsonData: jsonData)
+    }
+    
+    func retrieveGalleryResponsesFromCoreData() -> [GalleryResponse]? {
+        var galleryResponses: [GalleryResponse]?
+        coreData.fetchResponseModels(responseModelType: GalleryResponse.self) { (fetchedResponses, error) in
+            if let error = error {
+                print("Error fetching GalleryResponses:", error)
+            } else {
+                galleryResponses = fetchedResponses
+            }
+        }
+        return galleryResponses
     }
     
 }

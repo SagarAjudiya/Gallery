@@ -26,6 +26,8 @@
 		9B5C04852BEF3B1D0055F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5C04842BEF3B1D0055F2F6 /* Assets.xcassets */; };
 		9B5C04882BEF3B1D0055F2F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5C04862BEF3B1D0055F2F6 /* LaunchScreen.storyboard */; };
 		9B5C04952BEF3DEA0055F2F6 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9B5C04942BEF3DEA0055F2F6 /* GoogleSignIn */; };
+		9B6464F62BF26D6E004EAA37 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B6464F42BF26D6E004EAA37 /* Model.xcdatamodeld */; };
+		9B6464FD2BF270D1004EAA37 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B6464FA2BF270D1004EAA37 /* App.xcdatamodeld */; };
 		9B6BDA3F2BEF4F0500344252 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BDA3E2BEF4F0500344252 /* LoginVC.swift */; };
 		9B6BDA432BEF526800344252 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BDA422BEF526800344252 /* GoogleSignIn.swift */; };
 		9B72E3A62BEF87B00040452E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B72E3A42BEF87B00040452E /* ImageCell.swift */; };
@@ -58,6 +60,9 @@
 		9B5C04842BEF3B1D0055F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5C04872BEF3B1D0055F2F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B5C04892BEF3B1D0055F2F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B6464F52BF26D6E004EAA37 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9B6464FB2BF270D1004EAA37 /* YourDataModelName.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YourDataModelName.xcdatamodel; sourceTree = "<group>"; };
+		9B6464FC2BF270D1004EAA37 /* App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App.xcdatamodel; sourceTree = "<group>"; };
 		9B6BDA3E2BEF4F0500344252 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9B6BDA422BEF526800344252 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		9B72E3A42BEF87B00040452E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 			children = (
 				9B596BCD2BEFC44E00733661 /* GalleryModel.swift */,
 				9B07AB242BF0885400FB490E /* UserModel.swift */,
+				9B6464FA2BF270D1004EAA37 /* App.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 				9B6BDA412BEF524700344252 /* Helper */,
 				9B0F6FE92BEF72B800E8602B /* Extension */,
 				9B5C04892BEF3B1D0055F2F6 /* Info.plist */,
+				9B6464F42BF26D6E004EAA37 /* Model.xcdatamodeld */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -317,7 +324,9 @@
 				9B0F6FF12BEF77FC00E8602B /* HomeVC.swift in Sources */,
 				9B5C047E2BEF3B1C0055F2F6 /* SceneDelegate.swift in Sources */,
 				9B596BCE2BEFC44E00733661 /* GalleryModel.swift in Sources */,
+				9B6464F62BF26D6E004EAA37 /* Model.xcdatamodeld in Sources */,
 				9B72E3AB2BEF9C150040452E /* UserDefault.swift in Sources */,
+				9B6464FD2BF270D1004EAA37 /* App.xcdatamodeld in Sources */,
 				9B6BDA432BEF526800344252 /* GoogleSignIn.swift in Sources */,
 				9B596BC92BEFBFC300733661 /* WebService.swift in Sources */,
 				9B0F6FEB2BEF72D400E8602B /* UIView+Extension.swift in Sources */,
@@ -568,6 +577,30 @@
 			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9B6464F42BF26D6E004EAA37 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B6464F52BF26D6E004EAA37 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9B6464F52BF26D6E004EAA37 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9B6464FA2BF270D1004EAA37 /* App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B6464FB2BF270D1004EAA37 /* YourDataModelName.xcdatamodel */,
+				9B6464FC2BF270D1004EAA37 /* App.xcdatamodel */,
+			);
+			currentVersion = 9B6464FB2BF270D1004EAA37 /* YourDataModelName.xcdatamodel */;
+			path = App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B5C04702BEF3B1C0055F2F6 /* Project object */;
 }
